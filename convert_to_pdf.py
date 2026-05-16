@@ -20,7 +20,13 @@ with open(MD, "r") as f:
 css = r"""
 @page {
   size: A4;
-  margin: 2.54cm 3.18cm 2.54cm 3.18cm;
+  margin: 2.54cm 3.18cm 3.0cm 3.18cm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Times New Roman", serif;
+    font-size: 9pt;
+    color: #333;
+  }
 }
 
 @media print {
