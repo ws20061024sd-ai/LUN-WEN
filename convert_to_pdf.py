@@ -110,11 +110,8 @@ sup { font-size: 0.7em; vertical-align: super; line-height: 0; }
 
 /* ====== 注释 ====== */
 .notes-sep {
-  text-align: center;
-  font-size: 9pt;
-  color: #bbb;
+  border-top: 0.5pt solid #999;
   margin: 0.9cm 0 0.3cm 0;
-  letter-spacing: 3pt;
 }
 .notes-title {
   font-family: "Heiti SC", "STHeiti", "SimHei", sans-serif;
@@ -196,8 +193,6 @@ html = f"""<!DOCTYPE html>
 <body>
 
 <div class="title">{title_text}</div>
-<div class="author">作者姓名（单位，城市 邮编）</div>
-
 <!-- 摘要（内联标签） -->
 <div class="abstract-block">
 """
@@ -216,7 +211,7 @@ if keywords:
 html += '\n'.join(body_html) + '\n'
 
 # 注释
-html += '<div class="notes-sep">— — — — — — — — — —</div>\n'
+html += '<div class="notes-sep"></div>\n'
 html += '<div class="notes-title">注释</div>\n'
 for n in notes_lines:
     html += f'<div class="note">{n}</div>\n'
